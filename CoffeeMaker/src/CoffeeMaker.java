@@ -1,4 +1,4 @@
-public class CoffeeMaker {
+#public class CoffeeMaker {
 
 	/** Inventory in the coffee maker */
 	private int coffee;
@@ -94,10 +94,17 @@ public class CoffeeMaker {
 	 * @return int
 	 */
 	public int makeEspresso(int amtPaid) {
-
+int costOfEspresso =1;
+if(this.coffee <1){ return amtPaid;
+}else{ if (amtPaid >= costOfEspresso){
+int change = amtpaid - costOfEspresso;
+this.coffee--;
+return change;
+}
 		// TODO: code this method
-		return -1;
+return amtPaid;
 	}
+}
 
 	/**
 	 * Make a latte and return the change, or
