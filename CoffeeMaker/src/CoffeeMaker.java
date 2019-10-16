@@ -71,7 +71,19 @@ public class CoffeeMaker {
 	 */
 	public void addIngredients(int amtCoffee, int amtMilk, int amtChocolate) throws Exception {
 
+		if(amtChocolate < 0|| amtCoffee < 0  || amtMilk < 0)
+		{
+			throw new IllegalArgumentException();
+		}
+
+		this.coffee = amtCoffee;
+		this.milk = amtMilk;
+		this.chocolate = amtChocolate;
+
+
+
 		// TODO: code this method
+
 	}
 
 	/**
@@ -95,8 +107,15 @@ public class CoffeeMaker {
 	 * @return int
 	 */
 	public int makeLatte(int amtPaid) {
-
-		// TODO: code this method
-		return -1;
-	}    
+		int costOfLatte = 2;
+		if (this.coffee < 2 && this.milk < 1)
+		{
+			return amtPaid;
+		}
+		if (amtPaid >= costOfLatte){
+			int change = amtPaid - costOfLatte;
+			this.coffee = this.coffee - 2;
+			this.milk--;
+			return change;
+		} 
 }
